@@ -1,0 +1,4 @@
+- myextract\_all\_tf.py: extract features in pool3 layer. only consider the feature whose receptive field is within the object(remove offset patches)
+- mycluster.py: use K-means to get visual concepts
+- myprunning.py: use Greedy Merging Algorithm and some tricks to prune the clusters.
+- mydraw\_examples.py: show examples
