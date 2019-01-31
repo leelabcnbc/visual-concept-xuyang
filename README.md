@@ -1,11 +1,16 @@
 # 2017_visual_concepts
 
+update：
+The paper draft visual_concept_archive is also uploaded in this repository.
+My code also involves extracting visual concepts of portrait, which are used in Chen liu's Picasso work.
+
+=======================================================
 - prepare
   - DownloadVgg.py: download vgg-16 trained in 1000 classes of imagenet images.
   - GetDataPath.py: get training images from certain class
   -	Summer_project_on_visual_concepts.pptx: introduction of Alan Yuille's report about VC
   - finetune_baseline.py: fine-tune the VGG downloaded in DownloadVGG.py with my training data,that is,100 classes of objects cropped from original imagenet images, each class has about 300 pictures.
-  - imagenet_class_index.json: the description of my data
+  - imagenet_class_index.json: the description of my data, including category names and id.
   - network.py: the structure of VGG
 - extract VC
   - extract\_vc/: extract hidden layer features,get visual concepts,prunning and show examples of visual concepts
@@ -18,7 +23,7 @@
 - analysis
   - draw\_picture/: draw some results
 - finetune process
-  - generate_images: generate some training and testing images 
+  - generate_images.py: generate some training and testing images 
   - finetune_aperture_multiple_VC.py: finetune with 1 or 2 apertures opened images
   - network_test.py: test
 
