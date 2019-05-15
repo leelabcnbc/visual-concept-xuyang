@@ -9,7 +9,7 @@ sys.path.append('/home/xuyangf/project/ML_deliverables/Siamese_iclr17_tf-master/
 from tensorflow.python.client import timeline
 from datetime import datetime
 from utils import *
-from global_variables import *
+#from global_variables import *
 import cv2
 import json
 import sys
