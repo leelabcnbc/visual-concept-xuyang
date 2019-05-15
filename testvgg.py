@@ -2,7 +2,7 @@ from utils import *
 from tensorflow.python.client import timeline
 from datetime import datetime
 import network as vgg
-from global_variables import *
+#from global_variables import *
 from scipy.cluster import hierarchy
 from scipy.spatial.distance import pdist
 from sklearn.metrics.pairwise import cosine_distances
