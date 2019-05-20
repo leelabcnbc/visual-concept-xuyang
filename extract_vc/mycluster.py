@@ -136,8 +136,8 @@ for k in range(cluster_num):
         patchindex=index[sort_idx[idx]]
 
         oimage=cv2.imread(originimage[patchindex], cv2.IMREAD_UNCHANGED)
-        # oimage,_,__=process_image(oimage, '_',0)
-        oimage,_,__=process_image2(oimage)
+        oimage,_,__=process_image(oimage, '_',0)
+        #oimage,_,__=process_image2(oimage)
         oimage+=np.array([104., 117., 124.])
         hi=int(loc_set[patchindex,3])
         wi=int(loc_set[patchindex,4])
