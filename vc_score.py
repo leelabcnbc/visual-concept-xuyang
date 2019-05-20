@@ -166,37 +166,38 @@ for k in range(0,len(centers)):
 				fwi=int(loc_set[myindex[i]][8])
 				occluded_feature=deepcopy(original_feature)
 				# Gause occlusion
-				hiddenlayer_shape=occluded_feature[0].shape
-				mymask=generate_gaussian_mask(fhi,fwi,hiddenlayer_shape)
-				occluded_feature[0]=occluded_feature[0]*mymask
-				# occluded_feature[0][fhi-1][fwi]=0.25*occluded_feature[0][fhi-1][fwi]
-				# occluded_feature[0][fhi][fwi-1]=0.25*occluded_feature[0][fhi][fwi-1]
-				# occluded_feature[0][fhi+1][fwi]=0.25*occluded_feature[0][fhi+1][fwi]
-				# occluded_feature[0][fhi][fwi+1]=0.25*occluded_feature[0][fhi][fwi+1]
+				#hiddenlayer_shape=occluded_feature[0].shape
+				#mymask=generate_gaussian_mask(fhi,fwi,hiddenlayer_shape)
+				#occluded_feature[0]=occluded_feature[0]*mymask
+				occluded_feature[0][fhi][fwi]=0
+				occluded_feature[0][fhi-1][fwi]=0.25*occluded_feature[0][fhi-1][fwi]
+				occluded_feature[0][fhi][fwi-1]=0.25*occluded_feature[0][fhi][fwi-1]
+				occluded_feature[0][fhi+1][fwi]=0.25*occluded_feature[0][fhi+1][fwi]
+				occluded_feature[0][fhi][fwi+1]=0.25*occluded_feature[0][fhi][fwi+1]
 
-				# occluded_feature[0][fhi-1][fwi-1]=0.375*occluded_feature[0][fhi-1][fwi-1]
-				# occluded_feature[0][fhi+1][fwi-1]=0.375*occluded_feature[0][fhi+1][fwi-1]
-				# occluded_feature[0][fhi+1][fwi+1]=0.375*occluded_feature[0][fhi+1][fwi+1]
-				# occluded_feature[0][fhi-1][fwi+1]=0.375*occluded_feature[0][fhi-1][fwi+1]
+				occluded_feature[0][fhi-1][fwi-1]=0.375*occluded_feature[0][fhi-1][fwi-1]
+				occluded_feature[0][fhi+1][fwi-1]=0.375*occluded_feature[0][fhi+1][fwi-1]
+				occluded_feature[0][fhi+1][fwi+1]=0.375*occluded_feature[0][fhi+1][fwi+1]
+				occluded_feature[0][fhi-1][fwi+1]=0.375*occluded_feature[0][fhi-1][fwi+1]
 				
-				# occluded_feature[0][fhi+2][fwi]=0.625*occluded_feature[0][fhi+2][fwi]
-				# occluded_feature[0][fhi-2][fwi]=0.625*occluded_feature[0][fhi-2][fwi]
-				# occluded_feature[0][fhi][fwi-2]=0.625*occluded_feature[0][fhi][fwi-2]
-				# occluded_feature[0][fhi][fwi+2]=0.625*occluded_feature[0][fhi][fwi+2]
+				occluded_feature[0][fhi+2][fwi]=0.625*occluded_feature[0][fhi+2][fwi]
+				occluded_feature[0][fhi-2][fwi]=0.625*occluded_feature[0][fhi-2][fwi]
+				occluded_feature[0][fhi][fwi-2]=0.625*occluded_feature[0][fhi][fwi-2]
+				occluded_feature[0][fhi][fwi+2]=0.625*occluded_feature[0][fhi][fwi+2]
 
-				# occluded_feature[0][fhi-1][fwi-2]=0.75*occluded_feature[0][fhi-1][fwi-2]
-				# occluded_feature[0][fhi-1][fwi+2]=0.75*occluded_feature[0][fhi-1][fwi+2]
-				# occluded_feature[0][fhi+1][fwi-2]=0.75*occluded_feature[0][fhi+1][fwi-2]
-				# occluded_feature[0][fhi+1][fwi+2]=0.75*occluded_feature[0][fhi+1][fwi+2]
-				# occluded_feature[0][fhi-2][fwi-1]=0.75*occluded_feature[0][fhi-2][fwi-1]
-				# occluded_feature[0][fhi-2][fwi+1]=0.75*occluded_feature[0][fhi-2][fwi+1]
-				# occluded_feature[0][fhi+2][fwi-1]=0.75*occluded_feature[0][fhi+2][fwi-1]
-				# occluded_feature[0][fhi+2][fwi+1]=0.75*occluded_feature[0][fhi+2][fwi+1]
+				occluded_feature[0][fhi-1][fwi-2]=0.75*occluded_feature[0][fhi-1][fwi-2]
+				occluded_feature[0][fhi-1][fwi+2]=0.75*occluded_feature[0][fhi-1][fwi+2]
+				occluded_feature[0][fhi+1][fwi-2]=0.75*occluded_feature[0][fhi+1][fwi-2]
+				occluded_feature[0][fhi+1][fwi+2]=0.75*occluded_feature[0][fhi+1][fwi+2]
+				occluded_feature[0][fhi-2][fwi-1]=0.75*occluded_feature[0][fhi-2][fwi-1]
+				occluded_feature[0][fhi-2][fwi+1]=0.75*occluded_feature[0][fhi-2][fwi+1]
+				occluded_feature[0][fhi+2][fwi-1]=0.75*occluded_feature[0][fhi+2][fwi-1]
+				occluded_feature[0][fhi+2][fwi+1]=0.75*occluded_feature[0][fhi+2][fwi+1]
 
-				# occluded_feature[0][fhi-2][fwi-2]=0.875*occluded_feature[0][fhi-2][fwi-2]
-				# occluded_feature[0][fhi-2][fwi+2]=0.875*occluded_feature[0][fhi-2][fwi+2]
-				# occluded_feature[0][fhi+2][fwi-2]=0.875*occluded_feature[0][fhi+2][fwi-2]
-				# occluded_feature[0][fhi+2][fwi+2]=0.875*occluded_feature[0][fhi+2][fwi+2]				
+				occluded_feature[0][fhi-2][fwi-2]=0.875*occluded_feature[0][fhi-2][fwi-2]
+				occluded_feature[0][fhi-2][fwi+2]=0.875*occluded_feature[0][fhi-2][fwi+2]
+				occluded_feature[0][fhi+2][fwi-2]=0.875*occluded_feature[0][fhi+2][fwi-2]
+				occluded_feature[0][fhi+2][fwi+2]=0.875*occluded_feature[0][fhi+2][fwi+2]				
 
 				thesum+=GetPossDecrease(original_feature,occluded_feature,int(cat))
 			img_vc[n][k]=thesum/len(myindex)
